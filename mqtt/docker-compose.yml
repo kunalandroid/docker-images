@@ -13,7 +13,8 @@ services:
     - mosquitto-logs:/mosquitto/logs
     - mosquitto-conf:/mosquitto/config
 
-  restart: unless-stopped
+  restart: 
+    always
 
 volumes:
   mosquitto-data:
