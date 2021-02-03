@@ -3,6 +3,11 @@ version: '3'
 services:
   database:
     image: mongo:latest
+    container_name: nds-mongo
+    environment:
+      MONGO_INITDB_DATABASE: iot
+      MONGO_INITDB_ROOT_USERNAME: napino
+      MONGO_INITDB_ROOT_PASSWORD: vanilla
     ports:
     - 27017:27017
 
