@@ -1,4 +1,4 @@
-version: '5'
+version: '3'
 
 services:
 
@@ -11,12 +11,14 @@ services:
     volumes:
     - mosquitto-data:/mosquitto/data
     - mosquitto-logs:/mosquitto/logs
-    - mosquitto-conf:/mosquitto/config
+    - ./mosquitto-conf:/mosquitto/config
+    - ./mosquitto-passwd:/etc/mosquitto
 
-  restart: 
-    always
+    restart: 
+      always
 
 volumes:
   mosquitto-data:
   mosquitto-logs:
-  mosquitto-config:
+  mosquitto-conf:
+  mosquitto-passwd:
