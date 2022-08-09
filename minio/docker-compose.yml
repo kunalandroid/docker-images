@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  minio:
+    image: minio/minio
+    environment:
+      MINIO_ROOT_USER: {ADMIN_USERNAME}
+      MINIO_ROOT_PASSWORD: {ADMIN_PASSWORD}
+      MINIO_SERVER_URL: DOMAIN-OR_IP
+    command: minio server --console-address ":9001" /data
+    ports:
+    - 9000:9000
+    - 9001:9001
+    volumes:
+    - ./data:/data
